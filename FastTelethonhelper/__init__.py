@@ -82,6 +82,7 @@ async def download_without_progressbar(client, msg):
         filename = (
             "video_" + dt.now().isoformat("_", "seconds") + ".mp4"
                     )
+    print('above location.... ')
     download_location = filename
     with open(download_location, "wb") as f:
         await download_file(
@@ -89,6 +90,7 @@ async def download_without_progressbar(client, msg):
             location=file, 
             out=f,
         )
+    print('after opened..... ')
     return download_location
 
 async def upload_without_progress_bar(client, entity, file_location, name=None, thumbnail=None):
