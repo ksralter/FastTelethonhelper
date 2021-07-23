@@ -77,12 +77,12 @@ async def upload_with_progress_bar(client, reply, file_location, name=None, thum
 async def download_without_progressbar(client, msg):
     file = msg.document
     filename = msg.file.name
-    dir = f"downloads/"
+#     dir = f"downloads/"
     if not filename:
         filename = (
             "video_" + dt.now().isoformat("_", "seconds") + ".mp4"
                     )
-    download_location = dir + filename
+    download_location = filename
     with open(download_location, "wb") as f:
         await download_file(
             client=client, 
